@@ -18,3 +18,11 @@ function setActive(section) {
     });
     document.querySelector(`.custom-nav-item a[onclick*="${section}"]`).parentElement.classList.add('active');
 }
+function copyOrderCode() {
+    const orderCode = document.getElementById('orderCodeValue').innerText;
+    navigator.clipboard.writeText(orderCode).then(() => {
+        console.log('Order code copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}

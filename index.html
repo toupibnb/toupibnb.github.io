@@ -225,11 +225,17 @@
                 <div id="orderCodeModal" display="block">
                     <button id="closeModal">&times;</button>
                     <p class="ordercode">Mã đơn hàng của bạn là:</p>
-                    <h2 id="orderCodeValue"></h2>
+                    <div class="orderCodeVal">
+                        <h2 id="orderCodeValue"></h2>
+                        <button onclick="copyOrderCode()" style="float: right;">
+                            <img src="images/icon/copy.png" alt="Copy" style="width: 20px; height: 20px;">
+                        </button>
+                    </div>
                     <p class="note">Gửi mã này cho sốp qua ig để xác nhận đơn hàng nhé <3</p>
                 </div>
             </form>
         </div>
+        
         <!--Custom Products-->
         <div id="custom" class="section" style="display: none;">
             <div id="custom-gallery" class="custom-gallery"></div>
