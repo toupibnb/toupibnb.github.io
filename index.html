@@ -45,20 +45,20 @@
     <!-- Navbar -->
     <div class="main-container">
         <ul class="navbar-nav navigate under">
-            <li class="first nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick="showSection('home')">home</a>
+            <li class="first nav-item custom-nav-item active">
+            <a class="nav-link" href="#" onclick="setActive('home'); showSection('home');">home</a>
             </li>
             <li class="nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick=" updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
+            <a class="nav-link" href="#" onclick="setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
             </li>
             <li class="nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick="showSection('bake')">bake</a>
+            <a class="nav-link" href="#" onclick="setActive('bake'); showSection('bake')">bake</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+            <a class="nav-link" href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')">cart</a>
             </li>
             <li class="last nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick=" rendertoupi(); showSection('checkout')">cart</a>
-            </li>
-            <li class="nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick="showSection('custom')">custom</a>
+            <a class="nav-link" href="#" onclick="setActive('custom'); showSection('custom')">custom</a>
             </li>
         </ul>
         <!-- Content Sections -->
