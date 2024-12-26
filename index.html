@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toupi.bnb</title>
+
+    <meta property="og:title" content="Toupi | bead & bake">
+    <meta property="og:description" content="Shop chuyên làm vòng làm bánh!">
+    <meta property="og:image" content="images/logo/toupi.jpg">
+    <meta property="og:url" content="https://duphlot.github.io/toupi.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+
+    <link rel="icon" href="images/logo/logoNavbar.png" sizes="16x16" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/block.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/draws.css">
+    <link rel="stylesheet" href="css/newProducts.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/product-details.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <a class="navbar-brand">
+                    <img src="images/logo/logoNavbar.png" alt="Logo" class="navbar-logo">
+                </a>
+                <a class="nav-link">
+                    <div class="marquee-container d-flex justify-content-between align-items-center">
+                        <marquee class="marquee-text" behavior="scroll" direction="left" scrollamount="5" loop="infinite">
+                            Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ    Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ    Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ Welcome to the toupi.bnb! ˚✧‧₊ Follow us on Instagram @toupi.bnb for the latest product updates and exclusive news! ˚⟡౨ৎ
+                        </marquee>
+                    </div>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <div class="main-container">
+        <ul class="navbar-nav navigate under">
+            <li class="first nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="showSection('home')">home</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="showProductGrid(); showSection('bead')">bead</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="showSection('bake')">bake</a>
+            </li>
+            <li class="last nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="showSection('checkout')">cart</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="showSection('custom')">custom</a>
+            </li>
+        </ul>
+        <!-- Content Sections -->
+        <div id="home" class="section" style="display: block;">
+            <div class="row justify-content-between align-items-center head-tag">
+                <div class="col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
+                    <div class="logo">
+                        <img src="images/logo/logo.png" alt="logo">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div id="product-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 5vh;">
+                        <div id="carousel-container" class="carousel-inner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#product-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#product-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <h5 class="new-product-tag">
+                <strong>Collections</strong>
+            </h5>
+            <div class="new-product-container">
+                <div id="product-grid"></div>
+            </div>
+            <div class="text-container" style="margin-top: 50px;">
+                <h2 class="text-center">🌸 Welcome to toupi.bnb! 🌸</h2>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">💳 <span style="font-style: italic;">Banking only</span> 💳</p>
+                    <p class="mb-0">📍 <span style="font-weight: bold;">Saigon</span> 📍</p>
+                </div>
+                <hr>
+                <p>📋 <b>Một vài lưu ý quan trọng:</b></p>
+                <ol>
+                    <li>1️⃣ Hầu hết các mẫu chỉ có vài chiếc, bạn vui lòng chờ từ <b>2-5 ngày</b> nha!</li>
+                    <li>2️⃣ Các đơn custom theo yêu cầu sẽ cần khoảng <b>5-7 ngày</b> để hoàn thành.</li>
+                    <li>3️⃣ Toupi có hỗ trợ giao hàng như sau:
+                        <ul>
+                            <li>📦 Freeship trong bán kính <b>dưới 5km</b>.</li>
+                            <li>📦 Đồng giá <b>10k/đơn</b> cho bán kính từ <b>5-10km</b>.</li>
+                            <li>📦 Gửi hàng qua ViettelPost với mức phí từ <b>11-23k</b> cho khoảng cách trên 10km.</li>
+                            <li>📦 Sốp freeship tại khu vực Bách Khoa CS1 nè! ✨</li>
+                        </ul>
+                    </li>
+                    <li>4️⃣ Khi nhận hàng, nhớ <b>quay video unbox</b> để kiểm tra sản phẩm nha! Mình chỉ hỗ trợ khi có video thôi nè. 📹 ❤️</li>
+                    <li>5️⃣ Nếu có vấn đề khi mua hàng, hãy nhắn ngay <span style="color: #ff69b4;">@cherroseu</span> nhé!</li>
+                </ol>
+            </div>
+        </div>
+        <!--Products-->
+        <div id="bead" class="products section" style="display: none;">
+            <!-- Product Filters -->
+            <section id="product-filters" style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+                <button id="braceletsBtn" class="btn btn-outline-primary braceletsBtn active" onclick="showProductGrid(); showfilter('bracelets')">bracelets</button>
+                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('keyring')">keyring</button>
+                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('necklace')">necklace</button>
+                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('phonestrap')">phonestrap</button>
+            </section>
+            <!-- Cart Button (Top-Right Corner) -->
+            <section id="cart-products">
+                <div class="cart-btn-container d-flex justify-content-end mb-3" style="margin-top: -30px;">
+                    <button class="btn btn-outline-primary me-2" id="cartBtn">
+                        🛒 cart (<span id="cartCount">0</span> items)
+                    </button>
+                </div>
+                <div class="cart-modal" id="cartModal">
+                    <div id="cartContainer"></div>
+                    <a href="#" onclick="showSection('checkout')" class="btn btn-primary">Checkout</a>
+                    <button class="btn btn-secondary" id="closeCartBtn">Close</button>
+                </div>
+            </section>
+            <!-- Product Grid -->
+            <div id="product-grid-lists" class="side-section" style="display: block;">
+                <h2 class="text-center mb-4"></h2>
+                <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
+            </div>
+            <!--Product Details-->
+            <div id="product-details" class="side-section" style="display: none;">
+                <div class="productDetails row justify-content-between align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div id="product-details-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 5vh; max-width: 100vh;">
+                            <div class="carousel-inner" id="carousel-inner"></div>
+                            <div class="carousel-indicators" id="carousel-indicators"></div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#product-details-carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#product-details-carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="productDetailsText col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
+                        <div class="product-details-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Feedback-->
+        <div id="bake" class="products section" style="display: none;">
+            <div class="container text-center">
+                <img style="width: 50px; height: auto; display: block; margin: 0 auto; max-width: 100%;" id="imgur" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">
+            </div>
+        </div>
+        <!--Checkout-->
+        <div id="checkout" class="section" style="display: none; padding: 50px; padding-top: 30px;">
+            <link rel="stylesheet" href="css/checkout.css">
+            <form id="checkout-form" class="checkout-form">
+                <div class="row">
+                    <!-- Billing Details -->
+                    <div class="col-md-6 billing-details">
+                        <h4 class="mb-4" style="font-size: 25px; font-weight: 800;">Thông tin mua hàng</h4>
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label for="billing-name" class="form-label">Cho xin tên instagram nhoa</label>
+                            <input type="text" class="form-control" id="billing-name" required>
+                        </div>
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <label for="billing-number" class="form-label">Xin số điện thoại nữa</label>
+                            <input type="text" class="form-control" id="billing-number" required>
+                        </div>
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label for="billing-address" class="form-label">Mún nhận hàng sao nè</label>
+                            <select class="form-control" id="billing-address" required onchange="toggleOtherAddress(this)">
+                                <option value="pick up">để tui qua lấy</option>
+                                <option value="other">sốp giao dùm ii</option>
+                            </select>
+                            <input type="text" class="form-control mt-2" id="other-address" placeholder="nhập địa chỉ nhận hàng ở đây" style="display: none;">
+                        </div>
+                    </div>
+                    <!-- Order Summary -->
+                    <div class="col-md-6 order-summary">
+                        <h4 class="mb-4" style="font-size: 25px; font-weight: 800;">Order Summary</h4>
+                        <div id="cartItems" class="mb-3"></div>
+                        <div id="discountCombos" style="margin-top: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px;"></div>
+                        <p><strong>Total after discountCombos:</strong> <span id="subtotal">0</span></p>
+                    </div>
+                </div>
+                <!-- Place Order -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary w-50">Place Order</button>
+                </div>
+                <!-- Overlay and Modals -->
+                <div id="overlay"></div>
+                <div id="loading">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div id="success">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="green" stroke-width="2" />
+                        <path id="checkmark" d="M6 12l4 4 8-8" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div id="orderCodeModal" display="block">
+                    <button id="closeModal">&times;</button>
+                    <p class="ordercode">Mã đơn hàng của bạn là:</p>
+                    <h2 id="orderCodeValue"></h2>
+                    <p class="note">Gửi mã này cho sốp qua ig để xác nhận đơn hàng nhé <3</p>
+                </div>
+            </form>
+        </div>
+        <!--Custom Products-->
+        <div id="custom" class="section" style="display: none;">
+            <div id="custom-gallery" class="custom-gallery"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/addImg.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/product-details.js"></script>
+</body>
+</html>
