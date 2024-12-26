@@ -49,13 +49,13 @@
                 <a class="nav-link" href="#" onclick="showSection('home')">home</a>
             </li>
             <li class="nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick="showProductGrid(); showSection('bead')">bead</a>
+                <a class="nav-link" href="#" onclick=" updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
             </li>
             <li class="nav-item custom-nav-item">
                 <a class="nav-link" href="#" onclick="showSection('bake')">bake</a>
             </li>
             <li class="last nav-item custom-nav-item">
-                <a class="nav-link" href="#" onclick="showSection('checkout')">cart</a>
+                <a class="nav-link" href="#" onclick=" rendertoupi(); showSection('checkout')">cart</a>
             </li>
             <li class="nav-item custom-nav-item">
                 <a class="nav-link" href="#" onclick="showSection('custom')">custom</a>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="cart-modal" id="cartModal">
                     <div id="cartContainer"></div>
-                    <a href="#" onclick="showSection('checkout')" class="btn btn-primary">Checkout</a>
+                    <a href="#" onclick=" rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
                     <button class="btn btn-secondary" id="closeCartBtn">Close</button>
                 </div>
             </section>
