@@ -115,9 +115,9 @@
         </div>
         <!--Products-->
         <div id="bead" class="products section" style="display: none;">
-            <div class="products-tool-container">
+            <div class="products-tool-container" style="margin-bottom: none;">
                 <!-- Product Filters -->
-                <section id="product-filters" style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+                <section id="product-filters" style="margin-bottom: none; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
                     <button id="braceletsBtn" class="btn btn-outline-primary braceletsBtn active" onclick="showProductGrid(); showfilter('bracelets')">bracelets</button>
                     <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('keyring')">keyring</button>
                     <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('necklace')">necklace</button>
@@ -125,7 +125,7 @@
                 </section>
                 <!-- Cart Button (Top-Right Corner) -->
                 <section id="cart-products" style="min-width: fit-content;">
-                    <div class="cart-btn-container d-flex justify-content-end mb-3">
+                    <div class="cart-btn-container d-flex justify-content-end mb-3" style:= "margin-bottom: 0; !important">
                         <button class="btn btn-outline-primary me-2" id="cartBtn">
                             🛒 cart (<span id="cartCount">0</span> items)
                         </button>

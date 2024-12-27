@@ -61,6 +61,7 @@
     position: relative;
 }
 #product-grid-lists .carousel-inner {
+    
     border-radius: 30px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
