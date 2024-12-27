@@ -35,7 +35,27 @@ body {
     scrollbar-width: none;
     width: 100vw;
     padding: 20px;
+    border-left: none;
 }
+
+.slide-in {
+    animation-name: slideInFromLeft;
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out; 
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        opacity: 1;
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        opacity: 1;
+    }
+}
+
 
 .overside{
     background-color: transparent;
@@ -46,6 +66,41 @@ body {
     scrollbar-width: none;
     overflow-x: hidden;
 }
+
+
+
+
+
+
+
+.click-highlight {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: click-highlight-animation 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes click-highlight-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
 
 .navbar-expand-lg .navigate{
     flex-direction: column;
@@ -77,16 +132,19 @@ body {
     color: black;
     padding-left: 10px;
     opacity: 1;
+    border-right: none;
 }
 
 @media (min-width: 1000px) {
     .navbar-brand{
         margin-top: 8px;
     }
-    .custom-nav-item.active {
-        box-shadow: 20px 0 20px rgba(0, 0, 0, 1);
+    
+    .custom-nav-item.shadow-active {
+        box-shadow: 18px 0 20px rgb(0, 0, 0, 1);
     }
 }
+
 
 
 h1, h2, a, p, code, pre, .navbar-nav .nav-item .nav-link, #team-introduction h2, #products h2, #team-introduction .section-title h3, #products .section-title h3, #team-introduction .section-title p, #products .section-title p {

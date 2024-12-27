@@ -14,6 +14,12 @@
     font-weight: bold; 
 }
 
+.products-tool-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .form-select:focus {
     outline: none;
     border-color: #007bff;

@@ -44,8 +44,9 @@
     </nav>
     <!-- Navbar -->
     <div class="main-container">
+        <!-- Navigation -->
         <ul class="navbar-nav navigate under">
-            <li class="first nav-item custom-nav-item active">
+            <li class="first nav-item custom-nav-item active shadow-active">
             <a class="nav-link" href="#" onclick="setActive('home'); showSection('home');">home</a>
             </li>
             <li class="nav-item custom-nav-item">
@@ -115,26 +116,28 @@
         </div>
         <!--Products-->
         <div id="bead" class="products section" style="display: none;">
-            <!-- Product Filters -->
-            <section id="product-filters" style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
-                <button id="braceletsBtn" class="btn btn-outline-primary braceletsBtn active" onclick="showProductGrid(); showfilter('bracelets')">bracelets</button>
-                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('keyring')">keyring</button>
-                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('necklace')">necklace</button>
-                <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('phonestrap')">phonestrap</button>
-            </section>
-            <!-- Cart Button (Top-Right Corner) -->
-            <section id="cart-products">
-                <div class="cart-btn-container d-flex justify-content-end mb-3" style="margin-top: -30px;">
-                    <button class="btn btn-outline-primary me-2" id="cartBtn">
-                        🛒 cart (<span id="cartCount">0</span> items)
-                    </button>
-                </div>
-                <div class="cart-modal" id="cartModal">
-                    <div id="cartContainer"></div>
-                    <a href="#" onclick=" rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
-                    <button class="btn btn-secondary" id="closeCartBtn">Close</button>
-                </div>
-            </section>
+            <div class="products-tool-container">
+                <!-- Product Filters -->
+                <section id="product-filters" style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+                    <button id="braceletsBtn" class="btn btn-outline-primary braceletsBtn active" onclick="showProductGrid(); showfilter('bracelets')">bracelets</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('keyring')">keyring</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('necklace')">necklace</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('phonestrap')">phonestrap</button>
+                </section>
+                <!-- Cart Button (Top-Right Corner) -->
+                <section id="cart-products" style="min-width: fit-content;">
+                    <div class="cart-btn-container d-flex justify-content-end mb-3">
+                        <button class="btn btn-outline-primary me-2" id="cartBtn">
+                            🛒 cart (<span id="cartCount">0</span> items)
+                        </button>
+                    </div>
+                    <div class="cart-modal" id="cartModal">
+                        <div id="cartContainer"></div>
+                        <a href="#" onclick=" rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
+                        <button class="btn btn-secondary" id="closeCartBtn">Close</button>
+                    </div>
+                </section>
+            </div>
             <!-- Product Grid -->
             <div id="product-grid-lists" class="side-section" style="display: block;">
                 <h2 class="text-center mb-4"></h2>
@@ -235,7 +238,6 @@
                 </div>
             </form>
         </div>
-        
         <!--Custom Products-->
         <div id="custom" class="section" style="display: none;">
             <div id="custom-gallery" class="custom-gallery"></div>
