@@ -45,18 +45,6 @@ body {
     animation-timing-function: ease-out; 
 }
 
-@keyframes slideInFromLeft {
-    0% {
-        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-        opacity: 1;
-    }
-    100% {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        opacity: 1;
-    }
-}
-
-
 .overside{
     background-color: transparent;
     border-radius: 20px;
@@ -66,12 +54,6 @@ body {
     scrollbar-width: none;
     overflow-x: hidden;
 }
-
-
-
-
-
-
 
 .click-highlight {
     position: absolute;
@@ -83,24 +65,6 @@ body {
     animation: click-highlight-animation 1s ease-out;
     pointer-events: none;
 }
-
-@keyframes click-highlight-animation {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-
-
-
-
-
-
-
 
 .navbar-expand-lg .navigate{
     flex-direction: column;
@@ -134,18 +98,6 @@ body {
     opacity: 1;
     border-right: none;
 }
-
-@media (min-width: 1000px) {
-    .navbar-brand{
-        margin-top: 8px;
-    }
-    
-    .custom-nav-item.shadow-active {
-        box-shadow: 18px 0 20px rgb(0, 0, 0, 1);
-    }
-}
-
-
 
 h1, h2, a, p, code, pre, .navbar-nav .nav-item .nav-link, #team-introduction h2, #products h2, #team-introduction .section-title h3, #products .section-title h3, #team-introduction .section-title p, #products .section-title p {
     font-family: "Itim", serif;
@@ -267,25 +219,6 @@ p {
     animation: shake 2s infinite alternate;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes bounce {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-@keyframes shake {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-}
-
 .card-text {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -329,6 +262,16 @@ p {
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
+}
+
+@media (min-width: 1000px) {
+    .navbar-brand{
+        margin-top: 8px;
+    }
+    
+    .custom-nav-item.shadow-active {
+        box-shadow: 18px 0 20px rgb(0, 0, 0, 1);
+    }
 }
 
 
