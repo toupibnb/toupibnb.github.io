@@ -277,8 +277,8 @@ p {
 }
 
 .chat-box-comment h2{
-    font-size: 6.5vh;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: bolder;
     margin-bottom: 20px;
     color: #333;
 }
@@ -317,6 +317,10 @@ p {
 }
 
 @media (max-width: 1000px) {
+    
+    .chat-box-comment{
+        margin-top: 50px;
+    }
     .slide-in {
         animation-name: slideInFromTop;
         animation-duration: 0.7s;

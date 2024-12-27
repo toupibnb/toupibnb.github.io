@@ -51,12 +51,12 @@ document.addEventListener('click', function (e) {
 $(document).ready(function () {
     $('.center').slick({
         centerMode: true,
-        centerPadding: '20vw', 
+        centerPadding: '15vw', 
         slidesToShow: 1,
         autoplay: true,
         autoplaySpeed: 1000, 
-        prevArrow: '<button type="button" style="color: white; margin-left: 28vw;" class="slick-prev"> < </button>',
-        nextArrow: '<button type="button" style="color: white; margin-right: 28vw;" class="slick-next"> > </button>',
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
         dots: true, 
         focusOnSelect: true, 
         adaptiveHeight: true,
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '10vw', // Giảm bớt khoảng cách ở các màn hình nhỏ
+                    centerPadding: '2px', // Giảm bớt khoảng cách ở các màn hình nhỏ
                     slidesToShow: 1
                 }
             },
@@ -75,7 +75,7 @@ $(document).ready(function () {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '10vw', // Giảm bớt khoảng cách ở các màn hình nhỏ hơn
+                    centerPadding: '2px', // Giảm bớt khoảng cách ở các màn hình nhỏ hơn
                     slidesToShow: 1
                 }
             }
