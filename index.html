@@ -12,9 +12,13 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="vi_VN">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" href="images/logo/logoNavbar.png" sizes="16x16" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
     <link rel="stylesheet" href="css/block.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carousel.css">
@@ -25,6 +29,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/product-details.css">
     <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/slick.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -65,54 +70,49 @@
         </ul>
         <!-- Content Sections -->
         <div id="home" class="section" style="display: block;">
-            <div class="row justify-content-between align-items-center head-tag">
-                <div class="col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
-                    <div class="logo">
-                        <img src="images/logo/logo.png" alt="logo">
+
+            <div class="carousel-center-mode">
+                <div class="center" id="carousel-slick-container">
+                    <div><img src="images/homeCarousel/2.jpg" class="img-fluid" alt="Image 1"></div>
+                    <div><img src="images/homeCarousel/3.jpg" class="img-fluid" alt="Image 2"></div>
+                    <div><img src="images/homeCarousel/4.jpg" class="img-fluid" alt="Image 3"></div>
+                    <div><img src="images/homeCarousel/1.jpg" class="img-fluid" alt="Image 4"></div>
+                </div>
+            </div>
+            <div class="row head-tag" style="margin-top: 100px;">
+                <div class="col-lg-6 col-md-12">
+                    <div class="chat-box-comment">
+                        <h2>Góc tâm sự</h2>
+                        <p>Có đề xuất gì thêm cho sản phẩm mới hay cần sốp chỉnh sửa / thay đổi thì nhắn zô đây nhe</p>
+                        <div class="chat-box-input">
+                            <input type="text" placeholder="Nhập tin nhắn của bạn ở đây...">
+                            <button>Send</button>
+                        </div>
+                            
+                    </div>
+                    <div class="text-container">
+                        <h2 class="text-center">Coi hướng dẫn mua đồ ở đây !!!</h2>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0">📍Saigon</p>
+                        </div>
+                        <p class="mb-0">
+                            <a href="https://www.instagram.com/toupi.bnb/" target="_blank" style="text-decoration: none; color: inherit;">
+                                <i class="fa-brands fa-instagram"></i> @toupi.bnb
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <div id="product-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 5vh;">
-                        <div id="carousel-container" class="carousel-inner"></div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#product-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#product-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    <div class="best-seller">
+                        <h5 class="new-product-tag">
+                            <strong>Best Seller</strong>
+                        </h5>
+                        <div class="new-product-container">
+                            <div id="product-grid"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <h5 class="new-product-tag">
-                <strong>Collections</strong>
-            </h5>
-            <div class="new-product-container">
-                <div id="product-grid"></div>
-            </div>
-            <div class="text-container" style="margin-top: 50px;">
-                <h2 class="text-center">🌸 Welcome to toupi.bnb! 🌸</h2>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0">💳 <span style="font-style: italic;">Banking only</span> 💳</p>
-                    <p class="mb-0">📍 <span style="font-weight: bold;">Saigon</span> 📍</p>
-                </div>
-                <hr>
-                <p>📋 <b>Một vài lưu ý quan trọng:</b></p>
-                <ol>
-                    <li>1️⃣ Hầu hết các mẫu chỉ có vài chiếc, bạn vui lòng chờ từ <b>2-5 ngày</b> nha!</li>
-                    <li>2️⃣ Các đơn custom theo yêu cầu sẽ cần khoảng <b>5-7 ngày</b> để hoàn thành.</li>
-                    <li>3️⃣ Toupi có hỗ trợ giao hàng như sau:
-                        <ul>
-                            <li>📦 Freeship trong bán kính <b>dưới 5km</b>.</li>
-                            <li>📦 Đồng giá <b>10k/đơn</b> cho bán kính từ <b>5-10km</b>.</li>
-                            <li>📦 Gửi hàng qua ViettelPost với mức phí từ <b>11-23k</b> cho khoảng cách trên 10km.</li>
-                            <li>📦 Sốp freeship tại khu vực Bách Khoa CS1 nè! ✨</li>
-                        </ul>
-                    </li>
-                    <li>4️⃣ Khi nhận hàng, nhớ <b>quay video unbox</b> để kiểm tra sản phẩm nha! Mình chỉ hỗ trợ khi có video thôi nè. 📹 ❤️</li>
-                    <li>5️⃣ Nếu có vấn đề khi mua hàng, hãy nhắn ngay <span style="color: #ff69b4;">@cherroseu</span> nhé!</li>
-                </ol>
+                
             </div>
         </div>
         <!--Products-->
@@ -134,8 +134,15 @@
                     </div>
                     <div class="cart-modal" id="cartModal">
                         <div id="cartContainer"></div>
-                        <a href="#" onclick=" rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
+                        <a href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
                         <button class="btn btn-secondary" id="closeCartBtn">Close</button>
+                    </div>
+                    <div class="cart-delete-confirm" id = "cartDeleteConfirm">
+                        <p class = "confirm-text"></p>
+                        <div style="display: flex; flex-direction: row; justify-content:center; gap: 30px;">
+                            <button class="btn btn-primary" id="deleteItem">Yes</button>
+                            <button class="btn btn-secondary" id="cancelDelete">No</button>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -246,6 +253,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>    
     <script src="js/addImg.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/cart.js"></script>

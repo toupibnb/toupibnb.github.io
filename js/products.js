@@ -87,9 +87,27 @@ document.getElementById('product-details').addEventListener('click', function (e
 function removeFromtoupi(productName) {
     let toupi = JSON.parse(localStorage.getItem('toupi')) || [];
     const productIndex = toupi.findIndex(product => product.name === productName);
-    toupi.splice(productIndex, 1); 
-    localStorage.setItem('toupi', JSON.stringify(toupi));
-    updatetoupiUI();
+    const cartDeleteConfirm = document.getElementById('cartDeleteConfirm');
+    const confirmText = cartDeleteConfirm.querySelector('.confirm-text');
+    confirmText.innerHTML = `Xóa <strong>"${productName}"</strong> khỏi giỏ hàng?`;
+    cartDeleteConfirm.style.display = 'block';
+    updateCartModal();
+
+    const deleteItem = document.getElementById('deleteItem');
+    deleteItem.addEventListener('click', function() {
+        if (productIndex !== -1) {
+            toupi.splice(productIndex, 1);
+            localStorage.setItem('toupi', JSON.stringify(toupi));
+            updatetoupiUI();
+            updateCartModal();
+        }
+        cartDeleteConfirm.style.display = 'none';
+    });
+
+    const cancelDelete = document.getElementById('cancelDelete');
+    cancelDelete.addEventListener('click', function() {
+        cartDeleteConfirm.style.display = 'none';
+    });
 }
 
 function updatetoupiCount() {

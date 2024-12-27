@@ -262,8 +262,6 @@
     animation: draw 1s ease forwards;
 }
 
-
-
 #overlay {
     display: none;
     position: fixed;

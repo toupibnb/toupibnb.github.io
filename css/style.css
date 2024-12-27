@@ -264,6 +264,48 @@ p {
     margin-bottom: 0;
 }
 
+.second-container{
+    display: flex; 
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.chat-box-comment{
+    background-color: #fcedf8;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.chat-box-comment h2{
+    font-size: 6.5vh;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+.chat-box-comment p{
+    text-align: center;
+    font-size: 3vh;
+}
+
+.chat-box-input input{
+    width: 80%;
+    height: 5vh;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+}
+
+.chat-box-input button{
+    width: 15%;
+    height: 5vh;
+    border-radius: 20px;
+    background-color: #f295da;
+    color: white;
+    border: none;
+}
+
+
 @media (min-width: 1000px) {
     .navbar-brand{
         margin-top: 8px;
@@ -273,7 +315,6 @@ p {
         box-shadow: 18px 0 20px rgb(0, 0, 0, 1);
     }
 }
-
 
 @media (max-width: 1000px) {
     .main-container {

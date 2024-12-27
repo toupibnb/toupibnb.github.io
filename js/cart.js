@@ -48,11 +48,22 @@ function updateCartModal() {
     });
     subtotalElement.textContent = subtotal;
     document.querySelectorAll('.remove-item-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const index = this.getAttribute('data-index');
-            cart.splice(index, 1);
-            updateCartUI();
+        const cartDeleteConfirm = document.getElementById('cartDeleteConfirm');
+        button.addEventListener('click', () => {
+            cartDeleteConfirm.style.display = 'block';
             updateCartModal();
+            const deleteItem = document.getElementById('deleteItem');
+            deleteItem.addEventListener('click', function() {
+                const index = button.getAttribute('data-index');
+                cart.splice(index, 1);
+                updateCartUI();
+                updateCartModal();
+                cartDeleteConfirm.style.display = 'none';
+            });
+            const cancelDelete = document.getElementById('cancelDelete');
+            cancelDelete.addEventListener('click', function() {
+                cartDeleteConfirm.style.display = 'none';
+            });
         });
     });
 }

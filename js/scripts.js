@@ -16,8 +16,6 @@ function showSection(sectionId) {
     }
 }
 
-
-
 function setActive(section) {
     const navItems = document.querySelectorAll('.custom-nav-item');
     navItems.forEach(item => {
@@ -25,10 +23,11 @@ function setActive(section) {
             item.classList.remove('shadow-active');
     });
     document.querySelector(`.custom-nav-item a[onclick*="${section}"]`).parentElement.classList.add('active');
-    document.querySelector(`.custom-nav-item a[onclick*="${section}"]`).parentElement.classList.add('shadow-active');
-
-    
+    setTimeout(() => {
+        document.querySelector(`.custom-nav-item a[onclick*="${section}"]`).parentElement.classList.add('shadow-active');
+    }, 100);
 }
+
 function copyOrderCode() {
     const orderCode = document.getElementById('orderCodeValue').innerText;
     navigator.clipboard.writeText(orderCode).then(() => {
@@ -48,4 +47,38 @@ document.addEventListener('click', function (e) {
     setTimeout(() => {
         highlight.remove();
     }, 500);
+});
+$(document).ready(function () {
+    $('.center').slick({
+        centerMode: true,
+        centerPadding: '20vw', 
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 1000, 
+        prevArrow: '<button type="button" style="color: white; margin-left: 28vw;" class="slick-prev"> < </button>',
+        nextArrow: '<button type="button" style="color: white; margin-right: 28vw;" class="slick-next"> > </button>',
+        dots: true, 
+        focusOnSelect: true, 
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '10vw', // Giảm bớt khoảng cách ở các màn hình nhỏ
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '10vw', // Giảm bớt khoảng cách ở các màn hình nhỏ hơn
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 });

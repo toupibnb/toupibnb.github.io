@@ -68,12 +68,7 @@ async function initCarousel() {
         imgElement.src = imageSrc;
         imgElement.classList.add("d-block", "w-100", "carousel-img");
 
-        const labelDiv = document.createElement("div");
-        labelDiv.classList.add("corner-label", "top-left");
-        labelDiv.textContent = item.label;
-
         carouselItem.appendChild(imgElement);
-        carouselItem.appendChild(labelDiv);
         fragment.appendChild(carouselItem);
     });
 
