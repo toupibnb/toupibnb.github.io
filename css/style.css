@@ -317,6 +317,12 @@ p {
 }
 
 @media (max-width: 1000px) {
+    .slide-in {
+        animation-name: slideInFromTop;
+        animation-duration: 0.7s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-out; 
+    }
     .main-container {
         display: flex;
         flex-direction: column;

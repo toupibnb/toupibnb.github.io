@@ -27,6 +27,16 @@
         opacity: 1;
     }
 }
+@keyframes slideInFromTop {
+    0% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+        opacity: 1;
+    }
+    100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        opacity: 1;
+    }
+}
 
 @keyframes click-highlight-animation {
     0% {
