@@ -4,7 +4,7 @@ async function showProductGrid(){
     const selectedSection = document.getElementById('product-grid-lists');
     selectedSection.style.display = 'block';
 }
-async function showdetailsSection(sectionId, productId, productPrice, productName, productFilter, productStatus) {
+async function showdetailsSection(sectionId, productId, productPrice, productName, productStatus) {
     console.log(sectionId);
     console.log(productId);
 

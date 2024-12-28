@@ -1,35 +1,33 @@
 // New Products
 const productGrid = document.getElementById("product-grid");
-const productImagePath = "images/newProducts/";
-const productTextFile = "images/newProducts/text.txt";
+const productImagePath = "images/BestSeller/";
+const productTextFile = "images/BestSeller/text.txt";
 
 async function fetchProductDataForGrid() {
     const response = await fetch(productTextFile);
     const text = await response.text();
     return text.split("\n").map(line => {
-        const [imageName, label, position] = line.split('-').map(item => item.trim());
-        return { imageName, label, position };
-    }).filter(item => item.imageName && item.label && item.position);
+        const [folder,name, status, price,imageName, position] = line.split('-').map(item => item.trim());
+        return {folder,name, status, price,imageName, position};
+    }).filter(item =>item.folder && item.name && item.status && item.price && item.imageName && item.position);
 }
+
 
 async function initProductGrid() {
     const products = await fetchProductDataForGrid();
     const fragment = document.createDocumentFragment();
-
+    console.log(products);
     products.forEach(product => {
+        console.log(product);
         const columnDiv = document.createElement("div");
         columnDiv.classList.add("new-product");
-
+    
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card", product.position);
-
+        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead');showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}');`);
         const imgElement = document.createElement("img");
         imgElement.src = `${productImagePath}${product.imageName}`;
         imgElement.classList.add("card-img-top");
-
-        const labelDiv = document.createElement("div");
-        labelDiv.classList.add("corner-label", "bottom-right");
-        labelDiv.textContent = product.label;
 
         cardDiv.appendChild(imgElement);
         //cardDiv.appendChild(labelDiv);
@@ -38,41 +36,6 @@ async function initProductGrid() {
     });
 
     productGrid.appendChild(fragment);
-}
-
-// Carousel
-const carouselContainer = document.getElementById("carousel-container");
-const carouselImagePath = "images/homeCarousel/";
-const carouselTextFile = "images/homeCarousel/text.txt";
-
-async function fetchLabels() {
-    const response = await fetch(carouselTextFile);
-    const text = await response.text();
-    return text.split("\n").map(line => {
-        const [imageName, label] = line.split('-').map(item => item.trim());
-        return { imageName, label };
-    }).filter(item => item.imageName && item.label);
-}
-
-async function initCarousel() {
-    const labels = await fetchLabels();
-    const fragment = document.createDocumentFragment();
-
-    labels.forEach((item, index) => {
-        const imageSrc = `${carouselImagePath}${item.imageName}`;
-        
-        const carouselItem = document.createElement("div");
-        carouselItem.className = `carousel-item ${index === 0 ? "active" : ""}`;
-
-        const imgElement = document.createElement("img");
-        imgElement.src = imageSrc;
-        imgElement.classList.add("d-block", "w-100", "carousel-img");
-
-        carouselItem.appendChild(imgElement);
-        fragment.appendChild(carouselItem);
-    });
-
-    carouselContainer.appendChild(fragment);
 }
 
 // Product List
@@ -116,7 +79,7 @@ async function createProductCard(product, index) {
 
     const carouselInner = document.createElement("div");
     carouselInner.classList.add("carousel-inner");
-    carouselInner.setAttribute("onclick", `showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.filter}', '${product.status}') `);
+    carouselInner.setAttribute("onclick", `showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}') `);
     imageUrls.forEach((imageUrl, idx) => {
         const carouselItem = document.createElement("div");
         carouselItem.classList.add("carousel-item");
@@ -250,7 +213,6 @@ async function initCustomGallery() {
 
 document.addEventListener("DOMContentLoaded", () => {
     initProductGrid();
-    initCarousel();
     initProductList();
     initCustomGallery();
     

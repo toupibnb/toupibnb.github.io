@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/checkout.css">
-    <link rel="stylesheet" href="css/draws.css">
     <link rel="stylesheet" href="css/newProducts.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -56,10 +55,10 @@
             <a class="nav-link" href="#" onclick="setActive('home'); showSection('home');">home</a>
             </li>
             <li class="nav-item custom-nav-item">
-            <a class="nav-link" href="#" onclick="setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
+            <a class="nav-link" href="#" onclick="document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
             </li>
             <li class="nav-item custom-nav-item">
-            <a class="nav-link" href="#" onclick="setActive('bake'); showSection('bake')">bake</a>
+            <a class="nav-link" href="#" onclick="document.getElementById('crinkleBtn').click(); setActive('bake'); updatetoupiUI(); showProductGrid(); showSection('bake')">bake</a>
             </li>
             <li class="nav-item custom-nav-item">
             <a class="nav-link" href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')">cart</a>
@@ -113,8 +112,8 @@
                 </div>
             </div>
         </div>
-        <!--Products-->
-        <div id="bead" class="products section" style="display: none;">
+        <!--bead products-->
+        <div id="bead" class="products section"  style="display: none;">
             <div class="products-tool-container" style="margin-bottom: none;">
                 <!-- Product Filters -->
                 <section id="product-filters" style="margin-bottom: none; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
@@ -125,7 +124,7 @@
                 </section>
                 <!-- Cart Button (Top-Right Corner) -->
                 <section id="cart-products" style="min-width: fit-content;">
-                    <div class="cart-btn-container d-flex justify-content-end mb-3" style:= "margin-bottom: 0; !important">
+                    <div class="cart-btn-container d-flex justify-content-end" style:= "margin-bottom: 0; !important">
                         <button class="btn btn-outline-primary me-2" id="cartBtn">
                             🛒 cart (<span id="cartCount">0</span> items)
                         </button>
@@ -172,10 +171,63 @@
                 </div>
             </div>
         </div>
-        <!--Feedback-->
+        <!--bake products-->
         <div id="bake" class="products section" style="display: none;">
-            <div class="container text-center">
-                <img style="width: 50px; height: auto; display: block; margin: 0 auto; max-width: 100%;" id="imgur" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">
+            <div class="products-tool-container" style="margin-bottom: none;">
+                <!-- Product Filters -->
+                <section id="product-filters" style="margin-bottom: none; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+                    <button id="crinkleBtn" class="btn btn-outline-primary active" onclick="showProductGrid(); showfilter('crinkle')">crinkle</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('tart')">tart</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('cookies')">cookies</button>
+                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('update')">updating...</button>
+                </section>
+                <!-- Cart Button (Top-Right Corner) -->
+                <section id="cart-products" style="min-width: fit-content;">
+                    <div class="cart-btn-container d-flex justify-content-end" style:= "margin-bottom: 0; !important">
+                        <button class="btn btn-outline-primary me-2" id="cartBtn">
+                            🛒 cart (<span id="cartCount">0</span> items)
+                        </button>
+                    </div>
+                    <div class="cart-modal" id="cartModal">
+                        <div id="cartContainer"></div>
+                        <a href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
+                        <button class="btn btn-secondary" id="closeCartBtn">Close</button>
+                    </div>
+                    <div class="cart-delete-confirm" id = "cartDeleteConfirm">
+                        <p class = "confirm-text"></p>
+                        <div style="display: flex; flex-direction: row; justify-content:center; gap: 30px;">
+                            <button class="btn btn-primary" id="deleteItem">Yes</button>
+                            <button class="btn btn-secondary" id="cancelDelete">No</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Product Grid -->
+            <div id="product-grid-lists" class="side-section" style="display: block;">
+                <h2 class="text-center mb-4"></h2>
+                <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
+            </div>
+            <!--Product Details-->
+            <div id="product-details" class="side-section" style="display: none;">
+                <div class="productDetails row justify-content-between align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div id="product-details-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 5vh; max-width: 100vh;">
+                            <div class="carousel-inner" id="carousel-inner"></div>
+                            <div class="carousel-indicators" id="carousel-indicators"></div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#product-details-carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#product-details-carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="productDetailsText col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
+                        <div class="product-details-text"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--Checkout-->
@@ -258,7 +310,6 @@
     <script src="js/cart.js"></script>
     <script src="js/checkout.js"></script>
     <script src="js/products.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/product-details.js"></script>
 </body>

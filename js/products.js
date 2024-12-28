@@ -123,35 +123,36 @@ function updatetoupiUI() {
 
 function displaytoupiProducts() {
     const toupi = JSON.parse(localStorage.getItem('toupi')) || [];
-    const toupiContainer = document.getElementById('cartContainer');
-    toupiContainer.innerHTML = '';
+    document.querySelectorAll('#cartContainer').forEach(toupiContainer => {
+        toupiContainer.innerHTML = '';
 
-    if (toupi.length === 0) {
-        toupiContainer.innerHTML = '<p>Your cart is empty.</p>';
-    } else {
-        toupi.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('cart-product', 'd-flex', 'justify-content-between', 'align-items-center', 'mb-3');
-            itemDiv.innerHTML = `
-                <div class="flex-grow-1">
-                    <h4 class="cart-product-title mb-1">${item.name}</h4>
-                </div>
-                <div class="d-flex align-items-center justify-content-center flex-grow-1">
-                    <div class="item-price-quantity d-flex flex-column align-items-center">
-                        <p class="cart-product-price mb-1" style="font-size: 1rem;">${item.price}</p>
-                        <div class="d-flex align-items-center">
-                            <button class="btn btn-secondary btn-sm adjust-quantity decreaseQuantityBtn me-2 d-flex align-items-center justify-content-center" style="font-size:1.2rem; width: 30px; height: 30px;">-</button>
-                            <span class="quantity me-2" style="font-size: 1.2rem;">${item.quantity}</span>
-                            <button class="btn btn-secondary btn-sm adjust-quantity increaseQuantityBtn d-flex align-items-center justify-content-center" style="font-size:1.2rem; width: 30px; height: 30px;">+</button>
+        if (toupi.length === 0) {
+            toupiContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            toupi.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-product', 'd-flex', 'justify-content-between', 'align-items-center', 'mb-3');
+                itemDiv.innerHTML = `
+                    <div class="flex-grow-1">
+                        <h4 class="cart-product-title mb-1">${item.name}</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center flex-grow-1">
+                        <div class="item-price-quantity d-flex flex-column align-items-center">
+                            <p class="cart-product-price mb-1" style="font-size: 1rem;">${item.price}</p>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-secondary btn-sm adjust-quantity decreaseQuantityBtn me-2 d-flex align-items-center justify-content-center" style="font-size:1.2rem; width: 30px; height: 30px;">-</button>
+                                <span class="quantity me-2" style="font-size: 1.2rem;">${item.quantity}</span>
+                                <button class="btn btn-secondary btn-sm adjust-quantity increaseQuantityBtn d-flex align-items-center justify-content-center" style="font-size:1.2rem; width: 30px; height: 30px;">+</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <span class="trash-icon ms-3" onclick="removeFromtoupi('${item.name}')">&#128465;</span>
-            `;
-            toupiContainer.appendChild(itemDiv);
-        });
-        addtoupiButtonsEvents();
-    }
+                    <span class="trash-icon ms-3" onclick="removeFromtoupi('${item.name}')">&#128465;</span>
+                `;
+                toupiContainer.appendChild(itemDiv);
+            });
+        }
+    });
+    addtoupiButtonsEvents();
 }
 
 function addtoupiButtonsEvents() {
