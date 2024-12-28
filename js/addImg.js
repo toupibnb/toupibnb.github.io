@@ -7,9 +7,9 @@ async function fetchProductDataForGrid() {
     const response = await fetch(productTextFile);
     const text = await response.text();
     return text.split("\n").map(line => {
-        const [imageName, label, position] = line.split('-').map(item => item.trim());
-        return { imageName, label, position };
-    }).filter(item => item.imageName && item.label && item.position);
+        const [folder,name, status, price,imageName, position] = line.split('-').map(item => item.trim());
+        return { folder, name, status, price, imageName, position };
+    }).filter(item =>item.folder && item.name && item.status && item.price && item.imageName && item.position);
 }
 
 async function initProductGrid() {
