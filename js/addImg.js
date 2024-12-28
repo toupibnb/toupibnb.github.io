@@ -1,10 +1,10 @@
 // New Products
 const productGrid = document.getElementById("product-grid");
 const productImagePath = "images/BestSeller/";
-const productTextFile = "images/BestSeller/text.txt";
+const bestSellerTextFile = "images/BestSeller/text.txt";
 
 async function fetchProductDataForGrid() {
-    const response = await fetch(productTextFile);
+    const response = await fetch(bestSellerTextFile);
     const text = await response.text();
     return text.split("\n").map(line => {
         const [folder,name, status, price,imageName, position] = line.split('-').map(item => item.trim());
