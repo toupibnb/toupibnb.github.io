@@ -24,7 +24,7 @@ async function initProductGrid() {
     
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card", product.position);
-        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead');showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}');`);
+        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead');showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}');g`);
         const imgElement = document.createElement("img");
         imgElement.src = `${productImagePath}${product.imageName}`;
         imgElement.classList.add("card-img-top");
