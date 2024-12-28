@@ -1,33 +1,35 @@
 // New Products
 const productGrid = document.getElementById("product-grid");
-const productImagePath = "images/NewProducts/";
-const bestSellerTextFile = "images/NewProducts/text.txt";
+const productImagePath = "images/newProducts/";
+const productTextFile = "images/newProducts/text.txt";
 
 async function fetchProductDataForGrid() {
-    const response = await fetch(bestSellerTextFile);
+    const response = await fetch(productTextFile);
     const text = await response.text();
     return text.split("\n").map(line => {
-        const [folder,name, status, price,imageName, position] = line.split('-').map(item => item.trim());
-        return {folder,name, status, price,imageName, position};
-    }).filter(item =>item.folder && item.name && item.status && item.price && item.imageName && item.position);
+        const [imageName, label, position] = line.split('-').map(item => item.trim());
+        return { imageName, label, position };
+    }).filter(item => item.imageName && item.label && item.position);
 }
-
 
 async function initProductGrid() {
     const products = await fetchProductDataForGrid();
     const fragment = document.createDocumentFragment();
-    console.log(products);
+
     products.forEach(product => {
-        console.log(product);
         const columnDiv = document.createElement("div");
         columnDiv.classList.add("new-product");
-    
+
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card", product.position);
-        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead');showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}');`);
+
         const imgElement = document.createElement("img");
         imgElement.src = `${productImagePath}${product.imageName}`;
         imgElement.classList.add("card-img-top");
+
+        const labelDiv = document.createElement("div");
+        labelDiv.classList.add("corner-label", "bottom-right");
+        labelDiv.textContent = product.label;
 
         cardDiv.appendChild(imgElement);
         //cardDiv.appendChild(labelDiv);
@@ -37,6 +39,7 @@ async function initProductGrid() {
 
     productGrid.appendChild(fragment);
 }
+
 
 // Product List
 const productListContainer = document.getElementById("product-list");
