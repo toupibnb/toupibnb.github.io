@@ -1,7 +1,7 @@
 // New Products
 const productGrid = document.getElementById("product-grid");
-const productImagePath = "images/BestSeller/";
-const bestSellerTextFile = "images/BestSeller/text.txt";
+const productImagePath = "images/NewProducts/";
+const bestSellerTextFile = "images/NewProducts/text.txt";
 
 async function fetchProductDataForGrid() {
     const response = await fetch(bestSellerTextFile);
