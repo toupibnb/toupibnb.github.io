@@ -54,7 +54,7 @@ $(document).ready(function () {
         centerPadding: '15vw', 
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 1000, 
+        autoplaySpeed: 2000, 
         prevArrow: '<button type="button" class="slick-prev"></button>',
         nextArrow: '<button type="button" class="slick-next"></button>',
         dots: true, 
