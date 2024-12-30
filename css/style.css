@@ -122,7 +122,6 @@ a:hover {
 p {
     font-size: 1em;
     line-height: 1.6;
-    margin-bottom: 20px;
 }
 
 .navbar-logo {
@@ -150,7 +149,6 @@ p {
     font-family: "Itim", serif;
     line-height: 1.8;
     color: #333;
-    margin: 30px auto;
     padding: 20px;
     border-radius: 12px;
 }

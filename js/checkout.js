@@ -40,11 +40,12 @@ function rendertoupi() {
     const toupi = JSON.parse(localStorage.getItem('toupi')) || [];
     const toupiItemsContainer = document.getElementById('cartItems');
     const subtotalElement = document.getElementById('subtotal');
-    const discountCombosContainer = document.getElementById('discountCombos');
+    const cartGifts = document.getElementById('cartGifts');
 
     let subtotal = 0;
     let cookiesCount = 0;
     let braceletsCount = 0;
+    let braceletsTotalPrice = 0;
 
     toupi.forEach(item => {
         const quantity = item.quantity || 1;
@@ -55,32 +56,19 @@ function rendertoupi() {
             cookiesCount += quantity;
         } else {
             braceletsCount += quantity;
+            braceletsTotalPrice = braceletsTotalPrice + itemPrice * quantity;
         }
     });
 
-    let discount = 0;
-    const discountCombos = [];
-    let count = 0;
-    
-    while (braceletsCount >= 2) {
-        discount += 5000;
-        braceletsCount -= 2;
-        count++;
-    }
-    while (cookiesCount >= 3) {
-        discount += 5000;
-        cookiesCount -= 3;
-        count++;
-    }
-    discountCombos.push(`Special Discount: -${discount} VND`);
-    const total = subtotal - discount;
+    const total = subtotal;
+    console.log('Total:', total);
 
     toupiItemsContainer.innerHTML = '';
     toupi.forEach((item, index) => {
         const quantity = item.quantity || 1;
         const itemPrice = parseInt(item.price.replace(/\D/g, ''));
         const totalItemPrice = itemPrice * quantity;
-        
+
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('cart-item');
         itemDiv.innerHTML = `
@@ -88,36 +76,58 @@ function rendertoupi() {
             <span class="trash-icon" onclick="removeItem(${index})">&#128465;</span>
             <img src="${item.image}" alt="${item.name}" class="item-image">
             <div>
-                <p class="item-name">${item.name}</p>
-                <p class="item-price-quantity">
-                    <button class="btn btn-secondary btn-sm adjust-quantity" onclick="adjustQuantity('decrease', ${index})">-</button>
-                    <span class="quantity">${quantity}</span>
-                    <button class="btn btn-secondary btn-sm adjust-quantity" onclick="adjustQuantity('increase', ${index})">+</button>
-                </p>
+            <p class="item-name">${item.name}</p>
+            <p class="item-price-quantity">
+                <button class="btn btn-secondary btn-sm adjust-quantity" onclick="adjustQuantity('decrease', ${index})">-</button>
+                <span class="quantity">${quantity}</span>
+                <button class="btn btn-secondary btn-sm adjust-quantity" onclick="adjustQuantity('increase', ${index})">+</button>
+            </p>
             </div>
         </div>
-        <p class="item-total-price">${totalItemPrice} VND</p>
+        <p class="item-total-price">${totalItemPrice.toLocaleString()} VND</p>
         `;
         toupiItemsContainer.appendChild(itemDiv);
     });
-    discountCombosContainer.innerHTML = '';
-    discountCombos.forEach(combo => {
-        const comboDiv = document.createElement('div');
-        comboDiv.classList.add('discount-combo');
-        comboDiv.textContent = combo;
-        discountCombosContainer.appendChild(comboDiv);
-    });
-    subtotalElement.textContent = `${total} VND`;
+
+    cartGifts.innerHTML = '';
+    const giftDiv = document.createElement('div');
+    let GiftText;
+    if (braceletsTotalPrice < 50000) GiftText = document.createElement('p');
+    else {
+        GiftText = document.createElement('h2');
+        GiftText.style.fontSize = '20px';
+    }
+    GiftText.textContent = braceletsTotalPrice >= 50000 ? `sốp tặng bạng nèe` : `chỉ cần thêm ${(50000 - braceletsTotalPrice)/1000}k nữa là bạn sẽ nhận được một sốp tặng bạng nèe`;
+    if (braceletsTotalPrice >= 50000) {
+        giftDiv.classList.add('cart-item');
+        giftDiv.innerHTML = `
+            <div class="item-details">
+                <img src="images/gift/product01/1.jpg" alt="Dango Key" class="item-image">
+                <div>
+                    <p class="item-name">Dango Key</p>
+                </div>
+            </div>
+            <div class = "gift-price-tag">
+                <p class="item-total-price" style="margin-bottom: 0"><a style="text-decoration: line-through;"> 10,000 </a> VND</p>
+                <p style="margin-bottom: none;"> <a> 0 </a>  VND </p>
+            </div>
+            
+        `;
+        cartGifts.appendChild(GiftText);
+        cartGifts.appendChild(giftDiv);
+    } else cartGifts.appendChild(GiftText);
+
+    subtotalElement.textContent = `${total.toLocaleString()} VND`;
 }
 
 function generateUniqueOrderCode() {
     const now = new Date();
-    const year = String(now.getFullYear()).slice(-2);
+    //const year = String(now.getFullYear()).slice(-2);
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+    //const minutes = String(now.getMinutes()).padStart(2, '0');
+    //const seconds = String(now.getSeconds()).padStart(2, '0');
     const randomValue = String(Math.floor(Math.random() * 100)).padStart(2, '0');
     return `${month}${day}-${hours}${randomValue}`;
 }

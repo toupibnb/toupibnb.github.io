@@ -66,7 +66,7 @@ $(document).ready(function () {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '2px', // Giảm bớt khoảng cách ở các màn hình nhỏ
+                    centerPadding: '2px', 
                     slidesToShow: 1
                 }
             },
@@ -75,10 +75,62 @@ $(document).ready(function () {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '2px', // Giảm bớt khoảng cách ở các màn hình nhỏ hơn
+                    centerPadding: '2px',
                     slidesToShow: 1
                 }
             }
         ]
     });
 });
+
+const carousel = document.querySelector(".carousel");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+const dots = document.querySelectorAll(".dot");
+
+let currentIndex = 0; 
+const items = document.querySelectorAll(".item");
+const itemsPerPage = 6;
+const totalItems = items.length;
+const totalSlides = Math.ceil(totalItems / itemsPerPage);
+
+function updateActiveItems() {
+  items.forEach(item => item.classList.remove("active"));
+  const start = currentIndex * itemsPerPage;
+  const end = start + itemsPerPage;
+  for (let i = start; i < end && i < totalItems; i++) {
+    items[i].classList.add("active");
+  }
+}
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentIndex);
+  });
+  updateActiveItems();
+}
+
+leftArrow.addEventListener("click", () => {
+  if (currentIndex > 0) currentIndex--;
+  else currentIndex = totalSlides - 1;
+  updateCarousel();
+});
+
+rightArrow.addEventListener("click", () => {
+  if (currentIndex < totalSlides - 1) currentIndex++;
+  else currentIndex = 0;
+  updateCarousel();
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    updateCarousel();
+  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    updateCarousel();
+});
+  
