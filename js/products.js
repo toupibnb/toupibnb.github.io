@@ -17,6 +17,31 @@ document.addEventListener('DOMContentLoaded', function() {
     displaytoupiProducts();
 });
 
+document.getElementById('customCard').addEventListener('click', function (event) {
+    if (event.target.classList.contains('addToCartBtn')) {
+        const button = event.target;
+        const productStyle = button.closest('.product-category').classList.contains('cookies');
+        const productCard = button.closest('.card');
+        let productName = productCard.querySelector('.card-title').textContent.trim();
+        const productPrice = productCard.querySelector('#product-color').value;
+        const productImage = productCard.querySelector('img').getAttribute('src');
+        productName = `${productName} - ${productPrice}`;
+        console.log(`Adding to cart: ${productName}, Price: ${productPrice}, Style: ${productStyle}, Image: ${productImage}`);
+
+        let toupi = JSON.parse(localStorage.getItem('toupi')) || [];
+        const existingProduct = toupi.find(product => product.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            const product = { name: productName, price: productPrice, style: productStyle, image: productImage, quantity: 1 };
+            toupi.push(product);
+        }
+
+        localStorage.setItem('toupi', JSON.stringify(toupi));
+        updatetoupiUI();
+    }
+});
+
 document.getElementById('product-list').addEventListener('click', function (event) {
     if (event.target.classList.contains('addToCartBtn')) {
         const button = event.target;

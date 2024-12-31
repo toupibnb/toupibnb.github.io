@@ -192,26 +192,34 @@ async function fetchCustomImages() {
 async function initCustomGallery() {
     const customImages = await fetchCustomImages();
     const fragment = document.createDocumentFragment();
-
+    let count = 0;
     customImages.forEach(item => {
         const imageWrapper = document.createElement("div");
-        imageWrapper.classList.add("custom-image-wrapper");
+        imageWrapper.classList.add("item");
 
         const imgElement = document.createElement("img");
         imgElement.src = `${customPath}${item.imageName}`;
         imgElement.alt = item.caption;
-        imgElement.classList.add("custom-image");
-
-        const captionDiv = document.createElement("div");
-        captionDiv.classList.add("custom-caption");
-        captionDiv.textContent = item.caption;
+        imgElement.classList.add("img-fluid");
 
         imageWrapper.appendChild(imgElement);
-        imageWrapper.appendChild(captionDiv);
         fragment.appendChild(imageWrapper);
+        count++;
     });
 
     customContainer.appendChild(fragment);
+    
+    const customDots = document.getElementById("carousel-dots");
+    const dotsFragment = document.createDocumentFragment();
+    const totalSlides = Math.ceil(count / 6);
+    
+    console.log(count,totalSlides);   
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("button");
+        dot.classList.add("dot");
+        dotsFragment.appendChild(dot);
+    } customDots.appendChild(dotsFragment);
+    CustomGallery();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -46,11 +46,11 @@ function rendertoupi() {
     let cookiesCount = 0;
     let braceletsCount = 0;
     let braceletsTotalPrice = 0;
-
+    let spiderVerseCount = 0;
     toupi.forEach(item => {
         const quantity = item.quantity || 1;
         const itemPrice = parseInt(item.price.replace(/\D/g, ''));
-        subtotal += itemPrice * quantity;
+        
 
         if (item.style) {
             cookiesCount += quantity;
@@ -58,18 +58,18 @@ function rendertoupi() {
             braceletsCount += quantity;
             braceletsTotalPrice = braceletsTotalPrice + itemPrice * quantity;
         }
+        if (item.name.includes('across the spider verse')) {
+            spiderVerseCount += quantity;
+        }
     });
-
-    const total = subtotal;
-    console.log('Total:', total);
 
     toupiItemsContainer.innerHTML = '';
     toupi.forEach((item, index) => {
         const quantity = item.quantity || 1;
         const itemPrice = parseInt(item.price.replace(/\D/g, ''));
-        const totalItemPrice = itemPrice * quantity;
+        let totalItemPrice = itemPrice * quantity;
 
-        const itemDiv = document.createElement('div');
+        let itemDiv = document.createElement('div');
         itemDiv.classList.add('cart-item');
         itemDiv.innerHTML = `
         <div class="item-details">
@@ -84,13 +84,27 @@ function rendertoupi() {
             </p>
             </div>
         </div>
-        <p class="item-total-price">${totalItemPrice.toLocaleString()} VND</p>
         `;
+        if (item.name.includes('across the spider verse') && spiderVerseCount >= 2) {
+            let discountedPrice = 33000 * quantity;
+            itemDiv.innerHTML += `
+            <div class="gift-price-tag">
+                <p class="item-total-price" style="margin-bottom: 0"><a style="text-decoration: line-through;">${totalItemPrice.toLocaleString()}</a> VND</p>
+                <p style="margin-bottom: none;"> <a>${discountedPrice.toLocaleString()}</a> VND </p>
+            </div>
+            `;
+            totalItemPrice = discountedPrice;
+        } else {
+            itemDiv.innerHTML += `<p class="item-total-price">${totalItemPrice.toLocaleString()} VND</p>`;
+        }
         toupiItemsContainer.appendChild(itemDiv);
+        subtotal += totalItemPrice;
     });
+    const total = subtotal;
+    console.log('Total:', total);
 
     cartGifts.innerHTML = '';
-    const giftDiv = document.createElement('div');
+    let giftDiv = document.createElement('div');
     let GiftText;
     if (braceletsTotalPrice < 50000) GiftText = document.createElement('p');
     else {

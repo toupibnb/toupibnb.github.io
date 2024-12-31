@@ -83,54 +83,70 @@ $(document).ready(function () {
     });
 });
 
-const carousel = document.querySelector(".carousel");
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-const dots = document.querySelectorAll(".dot");
+function CustomGallery() {
+    const carousel = document.querySelector(".carousel");
+    const leftArrow = document.querySelector(".left-arrow");
+    const rightArrow = document.querySelector(".right-arrow");
+    const dots = document.querySelectorAll(".dot");
 
-let currentIndex = 0; 
-const items = document.querySelectorAll(".item");
-const itemsPerPage = 6;
-const totalItems = items.length;
-const totalSlides = Math.ceil(totalItems / itemsPerPage);
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".item");
+    const itemsPerPage = 6;
+    const totalItems = items.length;
+    const totalSlides = Math.ceil(totalItems / itemsPerPage);
 
-function updateActiveItems() {
-  items.forEach(item => item.classList.remove("active"));
-  const start = currentIndex * itemsPerPage;
-  const end = start + itemsPerPage;
-  for (let i = start; i < end && i < totalItems; i++) {
-    items[i].classList.add("active");
-  }
-}
+    function updateActiveItems(direction = null) {
+        items.forEach((item) => {
+            if (item.classList.contains("active")) {
+                item.classList.add(direction === "next" ? "next-exit" : "prev-exit");
+                setTimeout(() => {
+                    item.classList.remove("next-exit", "prev-exit", "active");
+                }, 100); 
+            }
+        });
 
-function updateCarousel() {
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentIndex);
-  });
-  updateActiveItems();
-}
+        const start = currentIndex * itemsPerPage;
+        const end = start + itemsPerPage;
+        for (let i = start; i < end && i < totalItems; i++) {
+            setTimeout(() => {
+                items[i].classList.add("active");
+                items[i].classList.add(direction === "next" ? "next-enter" : "prev-enter");
+            }, 100);
+        }
+        for (let i = start; i < end && i < totalItems; i++) {
+                items[i].classList.remove("next-enter", "prev-enter");
+        }
+    }
 
-leftArrow.addEventListener("click", () => {
-  if (currentIndex > 0) currentIndex--;
-  else currentIndex = totalSlides - 1;
-  updateCarousel();
-});
+    function updateCarousel(direction = null) {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-rightArrow.addEventListener("click", () => {
-  if (currentIndex < totalSlides - 1) currentIndex++;
-  else currentIndex = 0;
-  updateCarousel();
-});
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
 
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentIndex = index;
+        updateActiveItems(direction);
+    }
+
+    leftArrow.addEventListener("click", () => {
+        const previousIndex = currentIndex;
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
+        updateCarousel("prev");
+    });
+
+    rightArrow.addEventListener("click", () => {
+        const previousIndex = currentIndex;
+        currentIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
+        updateCarousel("next");
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            const direction = index > currentIndex ? "next" : "prev";
+            currentIndex = index;
+            updateCarousel(direction);
+        });
+    });
+
     updateCarousel();
-  });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    updateCarousel();
-});
-  
+}

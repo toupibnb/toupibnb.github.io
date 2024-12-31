@@ -70,3 +70,47 @@
         box-shadow: 0 0 0px rgba(255, 223, 0, 0.8);
     }
 }
+
+@keyframes slideInNext {
+    from {
+        transform: translateX(300%);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInPrev {
+    from {
+        transform: translateX(-300%);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutNext {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-350%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutPrev {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(350%);
+        opacity: 1;
+    }
+}

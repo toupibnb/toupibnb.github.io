@@ -30,22 +30,6 @@
   .custom-gallery-layout img{
     border-radius: 30px;
   }
-  .custom-gallery-layout .item {
-    border-radius: 30px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: auto;
-    font-size: 20px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .custom-gallery-layout .item.active {
-    border-radius: 30px;
-    display: flex; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
   
   
   .custom-gallery-layout .carousel-arrow {
@@ -61,10 +45,12 @@
   
   .custom-gallery-layout .left-arrow {
     left: -40px;
+    color: black;
   }
   
   .custom-gallery-layout .right-arrow {
     right: -40px;
+    color: black;
   }
   
   .custom-gallery-layout .carousel-dots {
@@ -93,5 +79,52 @@
   #custom .carousel-inner{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+  
+  .custom-gallery-layout .item {
+    border-radius: 30px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .custom-gallery-layout .item.active {
+    border-radius: 30px;
+    display: flex; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  
+
+
+
+
+
+  .item.next-enter {
+    top: -100;
+    z-index: 100;
+    animation: slideInNext 0.8s ease forwards;
+  }
+  
+  .item.prev-enter {
+    top: -100;
+    z-index: 100;
+    animation: slideInPrev 0.8s ease forwards;
+  }
+  
+  .item.next-exit {
+    position: relative;
+    animation: slideOutNext 0.8s ease forwards;
+    z-index: 50; /* Hạ z-index để nằm dưới */
+  }
+  
+  .item.prev-exit {
+    position: relative;
+    animation: slideOutPrev 0.8s ease forwards;
+    z-index: 50; /* Hạ z-index để nằm dưới */
   }
   

@@ -37,8 +37,10 @@
     margin-top: 20px;
 }
 
-.slick-prev:before{
+
+.slick-prev::before{
     content:'❮';
+    color: gray;
     font-family: cursive;
     margin-right: -25vw;
     font-size: 55px;
@@ -46,7 +48,8 @@
     opacity: 1;
 }
 
-.slick-next:before {
+.slick-next::before {
+    color: blueviolet;
     content:'❯';
     font-family: cursive;
     margin-left: -25vw;
