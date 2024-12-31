@@ -128,3 +128,14 @@
     z-index: 50; /* Hạ z-index để nằm dưới */
   }
   
+
+@media (max-width: 1000px) {
+    .custom-gallery-layout .carousel {
+        grid-template-columns: repeat(2, 2fr);
+        grid-auto-rows: 1fr;
+        grid-template-rows: repeat(3,1fr);
+    }
+    #customCard{
+      margin-top: 80px;
+    }
+}

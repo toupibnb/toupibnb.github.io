@@ -190,7 +190,13 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1000px){
+    #checkout{
+        padding: 50px; 
+        padding-top: 30px;
+    }
+}
+@media (max-width: 1000px) {
     #checkout .checkout-form {
         border-top-right-radius: 0;
         border-top-left-radius: 0;

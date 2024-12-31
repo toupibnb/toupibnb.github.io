@@ -83,10 +83,10 @@
     background-color: #007bff;
     color: white;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .products .cart-modal {
-        right: 10px;
-        top: 60px;
+        top: 140px;
+        right: 50px;
         padding: 10px;
     }
     .products .cart-product {
