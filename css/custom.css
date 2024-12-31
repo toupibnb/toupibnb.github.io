@@ -8,7 +8,7 @@
 }
 
 .custom-gallery-layout .carousel-container {
-    width: 80%;
+    width: 88%;
     margin: 0 auto;
     position: relative;
   }
@@ -44,12 +44,12 @@
   }
   
   .custom-gallery-layout .left-arrow {
-    left: -40px;
+    left: -30px;
     color: black;
   }
   
   .custom-gallery-layout .right-arrow {
-    right: -40px;
+    right: -30px;
     color: black;
   }
   
@@ -137,5 +137,17 @@
     }
     #customCard{
       margin-top: 80px;
+    }
+    .custom-gallery-layout img{
+      border-radius: 20px;
+    }
+    .custom-gallery-layout .left-arrow {
+      left: -25px;
+      color: black;
+    }
+    
+    .custom-gallery-layout .right-arrow {
+      right: -25px;
+      color: black;
     }
 }
