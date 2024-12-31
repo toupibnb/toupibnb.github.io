@@ -86,7 +86,7 @@ function rendertoupi() {
         </div>
         `;
         if (item.name.includes('across the spider verse') && spiderVerseCount >= 2) {
-            let discountedPrice = 33000 * quantity;
+            let discountedPrice = 32000 * quantity;
             itemDiv.innerHTML += `
             <div class="gift-price-tag">
                 <p class="item-total-price" style="margin-bottom: 0"><a style="text-decoration: line-through;">${totalItemPrice.toLocaleString()}</a> VND</p>
