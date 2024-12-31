@@ -85,3 +85,13 @@
 #home #product-grid{
     flex-wrap: wrap;
 }
+
+@media (max-width: 1000px) {
+    #home .new-product-tag {
+        font-size: 18px;
+        margin-bottom: -5px;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+    }    
+}

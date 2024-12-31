@@ -276,4 +276,10 @@ img {
     .products .removeFromCartBtn {
         font-size: 14px;
     }
+
+    #product-filters .btn, #cart-products .btn {
+        font-size: 1.8vh;
+        padding: 0.9vh 1.8vh;
+    }
+    
 }
