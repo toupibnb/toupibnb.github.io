@@ -22,7 +22,7 @@ async function initProductGrid() {
 
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card", product.position);
-        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); showSection('bead'); showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}')`);
+        cardDiv.setAttribute("onclick", `document.getElementById('braceletsBtn').click(); setActive('bead'); showSection('bead'); showDetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}')`);
         const imgElement = document.createElement("img");
         imgElement.src = `${productImagePath}${product.imageName}`;
         imgElement.classList.add("card-img-top");
@@ -82,7 +82,7 @@ async function createProductCard(product, index) {
 
     const carouselInner = document.createElement("div");
     carouselInner.classList.add("carousel-inner");
-    carouselInner.setAttribute("onclick", `showdetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}') `);
+    carouselInner.setAttribute("onclick", `showDetailsSection('product-details','${product.folder}','${product.price}', '${product.name}', '${product.status}') `);
     imageUrls.forEach((imageUrl, idx) => {
         const carouselItem = document.createElement("div");
         carouselItem.classList.add("carousel-item");

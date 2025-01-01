@@ -1,4 +1,3 @@
-/* Ngăn nhấp chuột phải vào ảnh */
 img {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -10,7 +9,6 @@ img {
     pointer-events: none;
 }
 
-/* Ngăn chọn văn bản */
 body {
     -webkit-user-select: none;
     -moz-user-select: none;

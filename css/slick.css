@@ -1,59 +1,56 @@
-
-
 .carousel-center-mode .slick-slide {
-    transform: scale(0.7); 
-    opacity: 0.3; 
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    overflow: hidden;
+  transform: scale(0.7);
+  opacity: 0.3;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
 }
 
 .carousel-center-mode .slick-center {
-    overflow: hidden;
-    transform: scale(1); 
-    opacity: 1; 
-    z-index: 100;
+  overflow: hidden;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 100;
 }
 
 .carousel-center-mode .slick-slide img {
-    border-radius: 5vh; 
+  border-radius: 5vh;
 }
 
 .carousel-center-mode .carousel-img {
-    width: 100%;
+  width: 100%;
 }
 
 .slick-dots {
-    bottom: -70px;
-    scale: 1.8;
+  bottom: -70px;
+  scale: 1.8;
 }
-.carousel-center-mode button{
-    background-color: transparent;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: none;
-    color: white;
-    font-size: 20px;
-    margin-top: 20px;
+.carousel-center-mode button {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
-
-.slick-prev::before{
-    content:'❮';
-    color: gray;
-    font-family: cursive;
-    margin-right: -25vw;
-    font-size: 55px;
-    color: black;
-    opacity: 1;
+.slick-prev::before {
+  content: "❮";
+  color: gray;
+  font-family: cursive;
+  margin-right: -25vw;
+  font-size: 55px;
+  color: black;
+  opacity: 1;
 }
 
 .slick-next::before {
-    color: blueviolet;
-    content:'❯';
-    font-family: cursive;
-    margin-left: -25vw;
-    font-size: 55px;
-    color: black;
-    opacity: 1;
+  color: blueviolet;
+  content: "❯";
+  font-family: cursive;
+  margin-left: -25vw;
+  font-size: 55px;
+  color: black;
+  opacity: 1;
 }
