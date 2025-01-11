@@ -58,13 +58,13 @@
             <a class="nav-link" href="#" onclick="document.getElementById('braceletsBtn').click(); setActive('bead'); updatetoupiUI(); showProductGrid(); showSection('bead')">bead</a>
             </li>
             <li class="nav-item custom-nav-item">
-            <a class="nav-link" href="#" onclick="document.getElementById('crinkleBtn').click(); setActive('bake'); updatetoupiUI(); showProductGrid(); showSection('bake')">bake</a>
+            <a class="nav-link" href="#" onclick=";setActive('bake'); showSection('bake')">bake</a>
+            </li>
+            <li class="last nav-item custom-nav-item">
+                <a class="nav-link" href="#" onclick="document.getElementById('braceletsBtn').click();setActive('custom'); showSection('custom')">custom</a>
             </li>
             <li class="nav-item custom-nav-item">
             <a class="nav-link" href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')">cart</a>
-            </li>
-            <li class="last nav-item custom-nav-item">
-            <a class="nav-link" href="#" onclick="document.getElementById('braceletsBtn').click();setActive('custom'); showSection('custom')">custom</a>
             </li>
         </ul>
         <!-- Content Sections -->
@@ -172,62 +172,56 @@
         </div>
         <!--bake products-->
         <div id="bake" class="products section" style="display: none;">
-            <div class="products-tool-container" style="margin-bottom: none;">
-                <!-- Product Filters -->
-                <section id="product-filters" style="margin-bottom: none; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
-                    <button id="crinkleBtn" class="btn btn-outline-primary active" onclick="showProductGrid(); showfilter('crinkle')">crinkle</button>
-                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('tart')">tart</button>
-                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('cookies')">cookies</button>
-                    <button class="btn btn-outline-primary" onclick="showProductGrid(); showfilter('update')">updating...</button>
-                </section>
-                <!-- Cart Button (Top-Right Corner) -->
-                <section id="cart-products" style="min-width: fit-content;">
-                    <div class="cart-btn-container d-flex justify-content-end" style:= "margin-bottom: 0; !important">
-                        <button class="btn btn-outline-primary me-2" id="cartBtn">
-                            🛒 cart (<span id="cartCount">0</span> items)
-                        </button>
-                    </div>
-                    <div class="cart-modal" id="cartModal">
-                        <div id="cartContainer"></div>
-                        <a href="#" onclick="setActive('cart'); rendertoupi(); showSection('checkout')" class="btn btn-primary">Checkout</a>
-                        <button class="btn btn-secondary" id="closeCartBtn">Close</button>
-                    </div>
-                    <div class="cart-delete-confirm" id = "cartDeleteConfirm">
-                        <p class = "confirm-text"></p>
-                        <div style="display: flex; flex-direction: row; justify-content:center; gap: 30px;">
-                            <button class="btn btn-primary" id="deleteItem">Yes</button>
-                            <button class="btn btn-secondary" id="cancelDelete">No</button>
+            <div class = "container text-center">
+                <img style = "width: 50px; height: auto; display: block; margin: 0 auto; max-width: 100%; " id="imgur" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">
+            </div>
+        </div>
+        <!--Custom Products-->
+        <div id="custom" class="section" style="display: none;">
+            <div class="row" style="align-items: end;">
+                <div class="col-lg-7 col-md-12">
+                    <h1 class="text-center mb-4" style="font-size: 40px">Chỉ có 1 trên đời</h1>
+                    <p class="mb-4" style="font-size: 27px; padding-left: 10px;">Tự custom một chiếc vòng tay, móc khóa, dây chuyền hay phone strap mà khỏi lo đụng hàng với đứa mình ghét hay bất cứ ai <3 </p>   
+                    <div class="custom-gallery-layout">
+                        <div class="carousel-container">
+                            <button class="carousel-arrow left-arrow">❮</button>
+                            <div class="carousel-wrapper">
+                              <div id="custom-gallery" class="carousel">
+                              </div>
+                            </div>
+                            <button class="carousel-arrow right-arrow">❯</button>
+                            <div id ="carousel-dots" class="carousel-dots">
+                            </div>
                         </div>
                     </div>
-                </section>
-            </div>
-            <!-- Product Grid -->
-            <div id="product-grid-lists" class="side-section" style="display: block;">
-                <h2 class="text-center mb-4"></h2>
-                <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
-            </div>
-            <!--Product Details-->
-            <div id="product-details" class="side-section" style="display: none;">
-                <div class="productDetails row justify-content-between align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div id="product-details-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 5vh; max-width: 100vh;">
-                            <div class="carousel-inner" id="carousel-inner"></div>
-                            <div class="carousel-indicators" id="carousel-indicators"></div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#product-details-carousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#product-details-carousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                    
+                </div>
+                <div id="customCard" class="col-lg-5 col-md-12">
+                    <div class="product-category bracelets">
+                        <div class="card">
+                            <div id="carouselCustom" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="images/custom/custom.jpg" class="card-img-top" alt="pastel collection"></div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h2 class="card-title">một cái duy nhất</h2>
+                                <select class="form-select mb-3" id="product-color" aria-label="Select color">
+                                    <option value="30,000 VND">30,000 VND</option>
+                                    <option value="25,000 VND">25,000 VND</option>
+                                    <option value="35,000 VND">35,000 VND</option>
+                                    <option value="40,000 VND">40,000 VND</option>
+                                </select>
+                                <a href="#" class="btn btn-primary addToCartBtn">Thêm vào giỏ hàng</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="productDetailsText col-lg-6 col-md-12 text-center mb-3 mb-lg-0">
-                        <div class="product-details-text"></div>
-                    </div>
+                    
                 </div>
             </div>
+            
+    
+            
         </div>
         <!--Checkout-->
         <div id="checkout" class="section" style="display: none;">
@@ -295,53 +289,6 @@
                     <p class="note">Gửi mã này cho sốp qua ig để xác nhận đơn hàng nhé <3</p>
                 </div>
             </form>
-        </div>
-        <!--Custom Products-->
-        <div id="custom" class="section" style="display: none;">
-            <div class="row" style="align-items: end;">
-                <div class="col-lg-7 col-md-12">
-                    <h1 class="text-center mb-4" style="font-size: 40px">Chỉ có 1 trên đời</h1>
-                    <p class="mb-4" style="font-size: 27px; padding-left: 10px;">Tự custom một chiếc vòng tay, móc khóa, dây chuyền hay phone strap mà khỏi lo đụng hàng với đứa mình ghét hay bất cứ ai <3 </p>   
-                    <div class="custom-gallery-layout">
-                        <div class="carousel-container">
-                            <button class="carousel-arrow left-arrow">❮</button>
-                            <div class="carousel-wrapper">
-                              <div id="custom-gallery" class="carousel">
-                              </div>
-                            </div>
-                            <button class="carousel-arrow right-arrow">❯</button>
-                            <div id ="carousel-dots" class="carousel-dots">
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div id="customCard" class="col-lg-5 col-md-12">
-                    <div class="product-category bracelets">
-                        <div class="card">
-                            <div id="carouselCustom" class="carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active"><img src="images/custom/custom.jpg" class="card-img-top" alt="pastel collection"></div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h2 class="card-title">một cái duy nhất</h2>
-                                <select class="form-select mb-3" id="product-color" aria-label="Select color">
-                                    <option value="30,000 VND">30,000 VND</option>
-                                    <option value="25,000 VND">25,000 VND</option>
-                                    <option value="35,000 VND">35,000 VND</option>
-                                    <option value="40,000 VND">40,000 VND</option>
-                                </select>
-                                <a href="#" class="btn btn-primary addToCartBtn">Thêm vào giỏ hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-    
-            
         </div>
     </div>
 

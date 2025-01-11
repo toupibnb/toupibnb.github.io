@@ -111,7 +111,7 @@ function rendertoupi() {
         GiftText = document.createElement('h2');
         GiftText.style.fontSize = '20px';
     }
-    GiftText.textContent = braceletsTotalPrice >= 50000 ? `sốp tặng bạng nèe` : `chỉ cần thêm ${(50000 - braceletsTotalPrice)/1000}k nữa là bạn sẽ nhận được một sốp tặng bạng nèe`;
+    GiftText.textContent = braceletsTotalPrice >= 50000 ? `sốp tặng bạng nèe` : `chỉ cần thêm ${(50000 - braceletsTotalPrice)/1000}k nữa là bạn sẽ được nhận 1 dango keyring từ sốp`;
     if (braceletsTotalPrice >= 50000) {
         giftDiv.classList.add('cart-item');
         giftDiv.innerHTML = `
