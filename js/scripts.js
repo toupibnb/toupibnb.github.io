@@ -51,7 +51,7 @@ document.addEventListener('click', function (e) {
 $(document).ready(function () {
     $('.center').slick({
         centerMode: true,
-        centerPadding: '15vw', 
+        centerPadding: '13vw', 
         slidesToShow: 1,
         autoplay: true,
         autoplaySpeed: 2000, 
