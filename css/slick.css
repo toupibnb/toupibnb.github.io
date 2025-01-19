@@ -6,13 +6,20 @@
 }
 .carousel-center-mode {
   margin: 0 auto;
-  width: 100%;
+  min-width: 100%;
 }
 .carousel-center-mode .slick-center {
   overflow: hidden;
   transform: scale(0.95);
   opacity: 1;
   z-index: 100;
+}
+
+@media (min-width: 1200px) {
+  .carousel-center-mode {
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .carousel-center-mode .slick-slide img {
