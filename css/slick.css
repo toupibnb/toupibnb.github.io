@@ -1,25 +1,15 @@
 .carousel-center-mode .slick-slide {
-  transform: scaley(0.6);
+  transform: scale(0.7);
   opacity: 0.3;
   transition: transform 0.5s ease, opacity 0.5s ease;
   overflow: hidden;
 }
-.carousel-center-mode {
-  margin: 0 auto;
-  min-width: 100%;
-}
+
 .carousel-center-mode .slick-center {
   overflow: hidden;
-  transform: scale(0.95);
+  transform: scale(1);
   opacity: 1;
   z-index: 100;
-}
-
-@media (min-width: 1200px) {
-  .carousel-center-mode {
-    margin: 0 auto;
-    width: 100%;
-  }
 }
 
 .carousel-center-mode .slick-slide img {
@@ -46,10 +36,21 @@
 }
 
 .slick-prev::before {
-  content: "";
+  content: "❮";
   color: gray;
   font-family: cursive;
-  margin-right: -21vw;
+  margin-top: -2vh;
+  margin-right: -18vw;
+  font-size: 55px;
+  color: black;
+  opacity: 1;
+}
+slick-prev slick-arrow slick-disabled::before {
+  color: gray;
+  content: "❮";
+  font-family: cursive;
+  margin-top: -2vh;
+  margin-right: -18vw;
   font-size: 55px;
   color: black;
   opacity: 1;
@@ -57,9 +58,10 @@
 
 .slick-next::before {
   color: blueviolet;
-  content: "";
+  content: "❯";
   font-family: cursive;
-  margin-left: -21vw;
+  margin-top: -2vh;
+  margin-left: -18vw;
   font-size: 55px;
   color: black;
   opacity: 1;

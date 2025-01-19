@@ -52,6 +52,7 @@ $(document).ready(function () {
     $('.center').slick({
         centerMode: true,
         slidesToShow: 1,
+        centerPadding: '13vw',
         autoplay: true,
         autoplaySpeed: 2000, 
         prevArrow: '<button type="button" class="slick-prev"></button>',
