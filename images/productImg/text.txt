@@ -2,7 +2,7 @@ product01-pastel collection-bracelets-on-30,000
 product02-vườn cây-keyring-on-15,000
 product03-zòng tay tình bạng-bracelets-on-28,000
 product04-ngũ cốc cầu vồng-bracelets-on-25,000
-product05-xmas bracelet-bracelets-on-35,000
+product05-xmas bracelet-bracelets-off-35,000
 product06-across the spider verse-bracelets-on-35,000
 product09-đi biển-bracelets-on-28,000
 product10-keyring nơ-keyring-on-25,000
